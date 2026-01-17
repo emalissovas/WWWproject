@@ -212,12 +212,30 @@ async function loadHonors() {
     main.innerHTML = html + '</table>';
 }
 
-async function loadLinks() {
+async function loadLinks(category) {
     const main = document.getElementById('main-content');
     const res = await fetch('/api/links');
     const data = await res.json();
-    let html = '<h2>Σύνδεσμοι</h2><ul>';
-    data.forEach(i => html += `<li><a href="${i.url}" target="_blank">${i.title}</a> (${i.category})</li>`);
+    
+    // Φιλτράρισμα βάσει κατηγορίας
+    // Αν δεν έχει επιλεγεί κατηγορία, δεν δείχνουμε τίποτα ή μήνυμα
+    if (!category) {
+        main.innerHTML = '<h2>Σύνδεσμοι</h2><p>Επιλέξτε κατηγορία από το πλευρικό μενού.</p>';
+        return;
+    }
+
+    // Φιλτράρουμε τα δεδομένα (υποθέτουμε ότι στο JSON έχεις πεδίο "category")
+    const filteredLinks = data.filter(link => link.category === category);
+
+    let html = `<h2>Σύνδεσμοι: ${category === 'video' ? 'Βίντεο' : 'Άρθρα'}</h2><ul>`;
+    
+    if (filteredLinks.length === 0) {
+        html += '<p>Δεν βρέθηκαν σύνδεσμοι σε αυτή την κατηγορία.</p>';
+    } else {
+        filteredLinks.forEach(i => {
+            html += `<li><a href="${i.url}" target="_blank">${i.title}</a></li>`;
+        });
+    }
     main.innerHTML = html + '</ul>';
 }
 

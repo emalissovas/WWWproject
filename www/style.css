@@ -20,45 +20,43 @@ body {
         "footer footer";
     grid-template-columns: 200px 1fr;
     gap: 10px;
-    /* Αφαιρέσαμε το min-height: 100vh για να μην τεντώνει υπερβολικά */
-    padding: 10px; /* Λίγο περιθώριο γύρω-γύρω από όλη τη σελίδα */
 }
 
-/* --- Περιοχές Grid (Βελτιωμένα Μεγέθη) --- */
+
 .header {
     grid-area: header;
-    background: #333;
+    background: #008ae6;
     color: white;
     text-align: center;
-    padding: 10px; /* Μικρύναμε το padding (ήταν 20px) */
+    padding: 10px; 
 }
 
 .header h1 {
-    margin: 5px 0; /* Μικρότερα περιθώρια για τον τίτλο */
+    margin: 5px 0;
 }
 
 .nav {
     grid-area: nav;
-    background: #444;
+    background: #1900a7;
 }
 
 .aside {
     grid-area: aside;
-    background: #f4f4f4;
+    background: #ffffff;
     padding: 10px;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #ffffff;
 }
 
 .main {
     grid-area: main;
     padding: 20px;
-    background: white;
+    background: rgb(255, 255, 255);
     min-height: 400px; /* Ελάχιστο ύψος για να μην φαίνεται άδειο */
 }
 
 .footer {
     grid-area: footer;
-    background: #333;
+    background: #1900a7;
     color: white;
     text-align: center;
     padding: 10px; /* Μικρύναμε το padding */
