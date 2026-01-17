@@ -31,7 +31,7 @@ function navigate(section) {
     }
 }
 
-// --- ΝΕΑ ΣΥΝΑΡΤΗΣΗ: ΒΙΟΓΡΑΦΙΑ ---
+// ΒΙΟΓΡΑΦΙΑ 
 function loadBio(topic) {
     const main = document.getElementById('main-content');
     let htmlContent = '<h2>Βιογραφία: Λευτέρης Πετρούνιας</h2>';
@@ -63,7 +63,7 @@ function loadBio(topic) {
     main.innerHTML = htmlContent;
 }
 
-// --- LOGIN ---
+//  LOGIN 
 function showLoginForm() {
     const main = document.getElementById('main-content');
     main.innerHTML = `
@@ -99,7 +99,7 @@ async function handleLogin(e) {
     }
 }
 
-// --- ADMIN PANEL ---
+//  ADMIN PANEL 
 function showAdminPanel() {
     const main = document.getElementById('main-content');
     main.innerHTML = `
@@ -134,7 +134,7 @@ function showAdminPanel() {
     loadAdminLinks();
 }
 
-// --- CRUD ΛΕΙΤΟΥΡΓΙΕΣ ---
+//  ΛΕΙΤΟΥΡΓΙΕΣ 
 async function addHonor() {
     const year = document.getElementById('new-year').value;
     const title = document.getElementById('new-honor').value;
@@ -202,7 +202,7 @@ async function deleteLink(id) {
     loadAdminLinks();
 }
 
-// --- VIEW ONLY ---
+//  VIEW ONLY 
 async function loadHonors() {
     const main = document.getElementById('main-content');
     const res = await fetch('/api/honors');
@@ -239,7 +239,7 @@ async function loadLinks(category) {
     main.innerHTML = html + '</ul>';
 }
 
-// --- ΦΩΤΟΓΡΑΦΙΕΣ ---
+// ΦΩΤΟΓΡΑΦΙΕΣ 
 function loadPhotos(category) {
     const main = document.getElementById('main-content');
     let htmlContent = '<h2>Φωτογραφίες</h2>';
