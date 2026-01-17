@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Λευτέρης Πετρούνιας - Βιογραφία</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <h1>Λευτέρης Πετρούνιας</h1>
+            <p>Ο "Άρχοντας των Κρίκων" - Ολυμπιονίκης Ενόργανης</p>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#" onclick="navigate('bio')">Βιογραφία</a></li>
+                <li><a href="#" onclick="navigate('photos')">Φωτογραφίες</a></li>
+                <li><a href="#" onclick="navigate('honors')">Διακρίσεις</a></li>
+                <li><a href="#" onclick="navigate('links')">Σύνδεσμοι</a></li>
+                <li><a href="#" onclick="navigate('admin')">Διαχείριση</a></li>
+            </ul>
+        </nav>
+
+        <aside class="aside">
+            <h3>Επιλογές</h3>
+            
+            <div id="aside-bio" class="submenu">
+                <button onclick="loadBio('early')">Πρώτα Χρόνια</button>
+                <button onclick="loadBio('personal')">Προσωπική Ζωή</button>
+            </div>
+
+            <div id="aside-photos" class="submenu hidden">
+                <button onclick="loadPhotos('competition')">Αγώνες</button>
+                <button onclick="loadPhotos('training')">Προπονήσεις</button>
+            </div>
+
+            <div id="aside-honors" class="submenu hidden">
+                <p>Προβολή Διακρίσεων</p>
+            </div>
+
+            <div id="aside-links" class="submenu hidden">
+                <p>Κατηγορίες Links</p>
+            </div>
+
+            <div id="aside-admin" class="submenu hidden">
+                <button>Σύνδεση Διαχειριστή</button>
+            </div>
+        </aside>
+
+        <main class="main" id="main-content">
+            <h2>Καλώς ήρθατε</h2>
+            <p>Επιλέξτε μια κατηγορία από το μενού για να δείτε πληροφορίες για τον Λευτέρη Πετρούνια.</p>
+        </main>
+
+        <footer class="footer">
+            <p>Εργασία 2025-26 - [Ευάγγελος Μαλισσόβας]</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
