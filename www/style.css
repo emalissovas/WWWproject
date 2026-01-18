@@ -1,4 +1,5 @@
-/* --- Γενικές Ρυθμίσεις --- */
+
+/* Εφαρμόζει box-sizing σε όλα τα στοιχεία */
 * {
     box-sizing: border-box;
 }
@@ -10,7 +11,7 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Grid Layout */
+/* Κύρια διάταξη σελίδας με CSS Grid */
 .grid-container {
     display: grid;
     grid-template-areas:
@@ -22,7 +23,7 @@ body {
     gap: 10px;
 }
 
-
+/* Κεφαλίδα σελίδας */
 .header {
     grid-area: header;
     background: #008ae6;
@@ -35,11 +36,13 @@ body {
     margin: 5px 0;
 }
 
+/* Πλευρικό μενού με αναδυόμενα κουμπιά */
 .nav {
     grid-area: nav;
     background: #1900a7;
 }
 
+/* Πλευρική μπάρα με κουμπιά */
 .aside {
     grid-area: aside;
     background: #ffffff;
@@ -47,6 +50,7 @@ body {
     border-right: 1px solid #ffffff;
 }
 
+/* Κύρια περιοχή περιεχομένου */
 .main {
     grid-area: main;
     padding: 20px;
@@ -54,6 +58,7 @@ body {
     min-height: 400px; 
 }
 
+/* Υποσέλιδο σελίδας */
 .footer {
     grid-area: footer;
     background: #1900a7;
@@ -63,7 +68,7 @@ body {
     margin-top: 10px;
 }
 
-
+/* Κουμπιά πλευρικού μενού */
 .nav ul {
     list-style-type: none;
     padding: 0;
@@ -82,7 +87,7 @@ body {
 }
 .nav li a:hover { background-color: #111; }
 
-/* --- Κουμπιά Πλευρικού Μενού --- */
+/*  Κουμπιά Πλευρικού Μενού  */
 .aside button {
     width: 100%;
     padding: 10px;
@@ -95,7 +100,8 @@ body {
 }
 .aside button:hover { background-color: #1abc9c; }
 
-/* --- ΦΩΤΟΓΡΑΦΙΕΣ (FLEXBOX) --- */
+/*  ΦΩΤΟΓΡΑΦΙΕΣ (FLEXBOX) */
+/* Γκαλερί φωτογραφιών με Flexbox */
 .photo-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -104,11 +110,13 @@ body {
     margin-top: 20px;
 }
 
+/* Κάθε φωτογραφία στη γκαλερί */
 .photo-item {
     text-align: center;
     width: 250px;
 }
 
+/* Εικόνες με εφέ hover και σκιά */
 .photo-item img {
     width: 100%;
     height: 250px;
@@ -121,11 +129,11 @@ body {
 
 .photo-item img:hover { transform: scale(1.05); }
 
-/* --- Utility Classes --- */
+/* Απόκρυψη στοιχείων */
 .hidden { display: none; }
 
-/* --- Responsive --- */
-@media screen and (max-width: 768px) {
+/*σχεδίαση για κινητές συσκευές */
+@media screen and (max-width: 768px) { 
     .grid-container {
         grid-template-areas:
             "header"
