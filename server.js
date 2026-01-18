@@ -1,17 +1,17 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const bodyParser = require('body-parser'); // Αλλαγή βάσει διαλέξεων
+const bodyParser = require('body-parser'); 
 const app = express();
 const PORT = 3000;
 
-// Αλλαγή: Χρήση του body-parser 
+//  body-parser 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static('www')); 
 
-//  ΒΟΗΘΗΤΙΚΗ ΣΥΝΑΡΤΗΣΗ EΓΓΡΑΦΗΣ 
+//  ΣΥΝΑΡΤΗΣΗ EΓΓΡΑΦΗΣ 
 const writeData = (filename, content, res) => {
     fs.writeFile(path.join(__dirname, 'data', filename), JSON.stringify(content, null, 2), (err) => {
         if (err) {
