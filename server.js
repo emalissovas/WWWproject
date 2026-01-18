@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.use(express.static('www')); 
 
-// --- ΒΟΗΘΗΤΙΚΗ ΣΥΝΑΡΤΗΣΗ EΓΓΡΑΦΗΣ 
+//  ΒΟΗΘΗΤΙΚΗ ΣΥΝΑΡΤΗΣΗ EΓΓΡΑΦΗΣ 
 const writeData = (filename, content, res) => {
     fs.writeFile(path.join(__dirname, 'data', filename), JSON.stringify(content, null, 2), (err) => {
         if (err) {

@@ -217,8 +217,6 @@ async function loadLinks(category) {
     const data = await res.json();
     
     // Φιλτράρισμα βάσει κατηγορίας
-    // Αν δεν έχει επιλεγεί κατηγορία, δεν δείχνουμε τίποτα ή μήνυμα
-    if (!category) {
         main.innerHTML = '<h2>Σύνδεσμοι</h2><p>Επιλέξτε κατηγορία από το πλευρικό μενού.</p>';
         return;
     }
@@ -236,7 +234,7 @@ async function loadLinks(category) {
         });
     }
     main.innerHTML = html + '</ul>';
-}
+
 
 // ΦΩΤΟΓΡΑΦΙΕΣ 
 function loadPhotos(category) {
