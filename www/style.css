@@ -10,7 +10,7 @@ body {
     background-color: #f0f0f0;
 }
 
-/* --- Βασικό Grid Layout --- */
+/* Grid Layout */
 .grid-container {
     display: grid;
     grid-template-areas:
@@ -51,7 +51,7 @@ body {
     grid-area: main;
     padding: 20px;
     background: rgb(255, 255, 255);
-    min-height: 400px; /* Ελάχιστο ύψος για να μην φαίνεται άδειο */
+    min-height: 400px; 
 }
 
 .footer {
@@ -59,7 +59,7 @@ body {
     background: #1900a7;
     color: white;
     text-align: center;
-    padding: 10px; /* Μικρύναμε το padding */
+    padding: 10px; 
     margin-top: 10px;
 }
 

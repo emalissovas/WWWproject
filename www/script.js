@@ -14,10 +14,9 @@ function navigate(section) {
 
     // ΛΟΓΙΚΗ ΠΛΟΗΓΗΣΗΣ
     if (section === 'bio') {
-        // Όταν πατάει "Βιογραφία", φορτώνουμε αυτόματα τα "Πρώτα Χρόνια"
         loadBio('early');
     } else if (section === 'photos') {
-        loadPhotos(); // Καλείται χωρίς όρισμα για να δείξει το αρχικό μήνυμα
+        loadPhotos(); 
     } else if (section === 'honors') {
         loadHonors();
     } else if (section === 'links') {
@@ -224,7 +223,7 @@ async function loadLinks(category) {
         return;
     }
 
-    // Φιλτράρουμε τα δεδομένα (υποθέτουμε ότι στο JSON έχεις πεδίο "category")
+    // Φιλτράρουμε τα δεδομένα 
     const filteredLinks = data.filter(link => link.category === category);
 
     let html = `<h2>Σύνδεσμοι: ${category === 'video' ? 'Βίντεο' : 'Άρθρα'}</h2><ul>`;

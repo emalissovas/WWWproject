@@ -5,15 +5,13 @@ const bodyParser = require('body-parser'); // Αλλαγή βάσει διαλέ
 const app = express();
 const PORT = 3000;
 
-// Middleware
-// Αλλαγή: Χρήση του body-parser όπως στις διαφάνειες (σελ. 60 στο 10. Express.pdf)
+// Αλλαγή: Χρήση του body-parser 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Αλλαγή: Ο φάκελος μετονομάστηκε σε www όπως στα παραδείγματα του καθηγητή
 app.use(express.static('www')); 
 
-// --- ΒΟΗΘΗΤΙΚΗ ΣΥΝΑΡΤΗΣΗ EΓΓΡΑΦΗΣ ---
+// --- ΒΟΗΘΗΤΙΚΗ ΣΥΝΑΡΤΗΣΗ EΓΓΡΑΦΗΣ 
 const writeData = (filename, content, res) => {
     fs.writeFile(path.join(__dirname, 'data', filename), JSON.stringify(content, null, 2), (err) => {
         if (err) {
@@ -25,7 +23,7 @@ const writeData = (filename, content, res) => {
     });
 };
 
-// --- LOGIN ---
+//  LOGIN 
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
     fs.readFile(path.join(__dirname, 'data', 'users.json'), 'utf8', (err, data) => {
@@ -37,7 +35,7 @@ app.post('/api/login', (req, res) => {
     });
 });
 
-// --- ΔΙΑΚΡΙΣΕΙΣ (CRUD) ---
+// ΔΙΑΚΡΙΣΕΙΣ 
 app.get('/api/honors', (req, res) => {
     fs.readFile(path.join(__dirname, 'data', 'honors.json'), 'utf8', (err, data) => {
         if (err) res.status(500).send('Error');
@@ -66,7 +64,7 @@ app.delete('/api/honors/:id', (req, res) => {
     });
 });
 
-// --- ΣΥΝΔΕΣΜΟΙ (CRUD) ---
+//  ΣΥΝΔΕΣΜΟΙ
 app.get('/api/links', (req, res) => {
     fs.readFile(path.join(__dirname, 'data', 'links.json'), 'utf8', (err, data) => {
         if (err) res.status(500).send('Error');
